@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var rand1 = Math.round(Math.random() * 25);
+      var randNumber = [];
+
+      for (var i = 0; i < rand1; i++) {
+        randNumber[i] = Math.round(Math.random() * 100);
+      }
+      console.log(randNumber);
+
+      // max
+      var max = 0;
+      for (var i = 0; i < randNumber.length; i++) {
+        if (randNumber[i] > max) {
+          max = randNumber[i];
+        }
+      }
+      console.log("Максимум: " + max);
+
+      //min
+      var min = 10000;
+      for (var i = 0; i < randNumber.length; i++) {
+        if (randNumber[i] < min) {
+          min = randNumber[i];
+        }
+      }
+      console.log("Минимум: " + min);
+
+      console.log("join " + randNumber.join("#"));
+
+      var str = "";
+
+      for (var i = 0; i < randNumber.length; i++) {
+        if (i == randNumber.length - 1) {
+          str += randNumber[i];
+        } else str += randNumber[i] + "#";
+      }
+      console.log("не join " + str);
+      console.log("split " + str.split("#"));
+
+      var res = [];
+      var a = "";
+      var j = 0;
+
+      for (var i = 0; i < str.length; i++) {
+        if (str[i] !== "#") {
+          a = a + str[i];
+        } else {
+          res[j] = parseInt(a);
+          a = "";
+          j++;
+        }
+      }
+      res[j] = parseInt(a);
+
+      console.log(res);
+    </script>
+  </body>
+</html>
