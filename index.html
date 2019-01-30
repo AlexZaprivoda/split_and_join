@@ -17,7 +17,7 @@
       console.log(randNumber);
 
       // max
-      var max = 0;
+      var max = randNumber[0];
       for (var i = 0; i < randNumber.length; i++) {
         if (randNumber[i] > max) {
           max = randNumber[i];
@@ -26,7 +26,7 @@
       console.log("Максимум: " + max);
 
       //min
-      var min = 10000;
+      var min = randNumber[0];
       for (var i = 0; i < randNumber.length; i++) {
         if (randNumber[i] < min) {
           min = randNumber[i];
